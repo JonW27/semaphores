@@ -14,7 +14,7 @@ int main(int argc, char **argv){
         printf("Semaphore already exists.\n");
       }
       else{
-        f = semget(24601, 1, IPC_CREAT | IPC_EXCL); // I looked at ftok, but I don't see how its better
+        f = semget(24601, 1, IPC_CREAT); // I looked at ftok, but I don't see how its better
         semctl(f, 0, SETVAL, argv[2]);
       }
     }
